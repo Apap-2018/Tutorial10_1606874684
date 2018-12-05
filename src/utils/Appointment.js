@@ -24,6 +24,7 @@ export const Appointment = {
 			return jsonResponse
 		})
 	},
+
 	updateStatusPasien(requestBody) {
 		return fetch(`${cors}${baseUrl}/1/updatePasien`, {
 			method: 'POST',
@@ -48,6 +49,22 @@ export const Appointment = {
 			return response.json()
 		})
 		.then(jsonResponse =>{
+			return jsonResponse
+		})
+	},
+
+	addLabResult(requestBody) {
+		return fetch(`${cors}${baseUrl}/1/addLabResult`,{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(requestBody)
+		})
+		.then(response => {
+			return response.json()
+		})
+		.then(jsonResponse => {
 			return jsonResponse
 		})
 	},
